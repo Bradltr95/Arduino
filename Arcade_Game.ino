@@ -39,7 +39,6 @@ void setup() {
 }
 
 void loop() {
-while(gamestate) {
   for(int i = 7; i <=13; i++) {
     digitalWrite(i, HIGH);
 
@@ -64,7 +63,6 @@ while(gamestate) {
     digitalWrite(i, LOW);   
     delay(gameLevel);
   }
-}
 }
 
 void win() {
