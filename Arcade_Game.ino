@@ -54,7 +54,7 @@ while(gamestate) {
       }
     }
 
-    if(buttonLevelState == 0){
+    if(buttonLevelState == 1){
       gameLevel = 25; 
     }else{
       gameLevel = 40; 
