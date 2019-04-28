@@ -68,83 +68,25 @@ while(gamestate) {
 }
 
 void win() {
-  digitalWrite(lYellowPin, HIGH);
-  digitalWrite(lBluePin, HIGH);
-  digitalWrite(lWhitePin, HIGH);
-  digitalWrite(RedPin, HIGH);
-  digitalWrite(rYellowPin, HIGH);
-  digitalWrite(rBluePin, HIGH);
-  digitalWrite(rWhitePin, HIGH);
+ for(int i = 0; i < 4; i++) {
+    digitalWrite(lYellowPin, HIGH);
+    digitalWrite(lBluePin, HIGH);
+    digitalWrite(lWhitePin, HIGH);
+    digitalWrite(RedPin, HIGH);
+    digitalWrite(rYellowPin, HIGH);
+    digitalWrite(rBluePin, HIGH);
+    digitalWrite(rWhitePin, HIGH);
 
-  delay(250); 
+    delay(250); 
 
-  digitalWrite(lYellowPin, LOW);
-  digitalWrite(lBluePin, LOW);
-  digitalWrite(lWhitePin, LOW);
-  digitalWrite(RedPin, LOW);
-  digitalWrite(rYellowPin, LOW);
-  digitalWrite(rBluePin, LOW);
-  digitalWrite(rWhitePin, LOW); 
+    digitalWrite(lYellowPin, LOW);
+    digitalWrite(lBluePin, LOW);
+    digitalWrite(lWhitePin, LOW);
+    digitalWrite(RedPin, LOW);
+    digitalWrite(rYellowPin, LOW);
+    digitalWrite(rBluePin, LOW);
+    digitalWrite(rWhitePin, LOW); 
 
-  delay(250); 
-
-   digitalWrite(lYellowPin, HIGH);
-  digitalWrite(lBluePin, HIGH);
-  digitalWrite(lWhitePin, HIGH);
-  digitalWrite(RedPin, HIGH);
-  digitalWrite(rYellowPin, HIGH);
-  digitalWrite(rBluePin, HIGH);
-  digitalWrite(rWhitePin, HIGH);
-
-  delay(250); 
-
-  digitalWrite(lYellowPin, LOW);
-  digitalWrite(lBluePin, LOW);
-  digitalWrite(lWhitePin, LOW);
-  digitalWrite(RedPin, LOW);
-  digitalWrite(rYellowPin, LOW);
-  digitalWrite(rBluePin, LOW);
-  digitalWrite(rWhitePin, LOW); 
-
-  delay(250);
-
-   digitalWrite(lYellowPin, HIGH);
-  digitalWrite(lBluePin, HIGH);
-  digitalWrite(lWhitePin, HIGH);
-  digitalWrite(RedPin, HIGH);
-  digitalWrite(rYellowPin, HIGH);
-  digitalWrite(rBluePin, HIGH);
-  digitalWrite(rWhitePin, HIGH);
-
-  delay(250); 
-
-  digitalWrite(lYellowPin, LOW);
-  digitalWrite(lBluePin, LOW);
-  digitalWrite(lWhitePin, LOW);
-  digitalWrite(RedPin, LOW);
-  digitalWrite(rYellowPin, LOW);
-  digitalWrite(rBluePin, LOW);
-  digitalWrite(rWhitePin, LOW); 
-
-  delay(250);
-
-   digitalWrite(lYellowPin, HIGH);
-  digitalWrite(lBluePin, HIGH);
-  digitalWrite(lWhitePin, HIGH);
-  digitalWrite(RedPin, HIGH);
-  digitalWrite(rYellowPin, HIGH);
-  digitalWrite(rBluePin, HIGH);
-  digitalWrite(rWhitePin, HIGH);
-
-  delay(250); 
-
-  digitalWrite(lYellowPin, LOW);
-  digitalWrite(lBluePin, LOW);
-  digitalWrite(lWhitePin, LOW);
-  digitalWrite(RedPin, LOW);
-  digitalWrite(rYellowPin, LOW);
-  digitalWrite(rBluePin, LOW);
-  digitalWrite(rWhitePin, LOW); 
-
-  delay(250);
+    delay(250); 
+  }
 }
