@@ -1,7 +1,4 @@
 /* Created by Bradley Latreille */ 
-
-// BUGS: HOLD THE BUTTON DOWN AND YOU WILL WIN EVERYTIME 
-
 // initialize all of our LED pins 
 int lYellowPin = 7; 
 int lBluePin = 8; 
@@ -11,18 +8,19 @@ int rYellowPin = 11;
 int rBluePin = 12; 
 int rWhitePin = 13; 
 
-// flicker speed 
-int gamelevel = 25; 
+// flciker speed (ms) 
+int gameLevel = 25; 
 
 // initialize the button pin 
-int buttonPin = 2; 
+int buttonPin = 2;
+int buttonLevelPin = 4;  
 
 // initialize the reset pin 
 int resetPin = 3; 
 
 // initialize the button's state
 int buttonState = 0;  
-
+int buttonLevelState = 0; 
 // initialize the game state 
 bool gamestate = true; 
 
@@ -34,9 +32,10 @@ void setup() {
   pinMode(rWhitePin , OUTPUT);
   pinMode(rBluePin , OUTPUT);
   pinMode(rYellowPin , OUTPUT);
-  pinMode(resetPin, INPUT); 
   
+  pinMode(resetPin, INPUT); 
   pinMode(buttonPin, INPUT); 
+  pinMode(buttonLevelPin, INPUT); 
 }
 
 void loop() {
@@ -44,6 +43,7 @@ while(gamestate) {
   for(int i = 7; i <=13; i++) {
     digitalWrite(i, HIGH);
 
+    buttonLevelState = digitalRead(buttonLevelPin); 
     buttonState = digitalRead(buttonPin); 
 
     if(i==10) { 
@@ -52,6 +52,12 @@ while(gamestate) {
         //gamestate = false; 
         digitalRead(resetPin);
       }
+    }
+
+    if(buttonLevelState == 0){
+      gameLevel = 25; 
+    }else{
+      gameLevel = 40; 
     }
     
     delay(gameLevel); 
