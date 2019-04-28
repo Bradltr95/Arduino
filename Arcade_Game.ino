@@ -1,4 +1,7 @@
 /* Created by Bradley Latreille */ 
+
+// BUGS: HOLD THE BUTTON DOWN AND YOU WILL WIN EVERYTIME 
+
 // initialize all of our LED pins 
 int lYellowPin = 7; 
 int lBluePin = 8; 
@@ -10,6 +13,9 @@ int rWhitePin = 13;
 
 // initialize the button pin 
 int buttonPin = 2; 
+
+// initialize the reset pin 
+int resetPin = 3; 
 
 // initialize the button's state
 int buttonState = 0;  
@@ -25,54 +31,30 @@ void setup() {
   pinMode(rWhitePin , OUTPUT);
   pinMode(rBluePin , OUTPUT);
   pinMode(rYellowPin , OUTPUT);
-
+  pinMode(resetPin, INPUT); 
+  
   pinMode(buttonPin, INPUT); 
 }
 
 void loop() {
 while(gamestate) {
-  digitalWrite(lYellowPin, HIGH);
-  delay(50); 
-  digitalWrite(lYellowPin, LOW);   
-  delay(50); 
-  
-  digitalWrite(lBluePin, HIGH);
-  delay(50); 
-  digitalWrite(lBluePin, LOW);
-  delay(50); 
-  
-  digitalWrite(lWhitePin, HIGH);
-  delay(50); 
-  digitalWrite(lWhitePin, LOW);
-  delay(50); 
+  for(int i = 7; i <=13; i++) {
+    digitalWrite(i, HIGH);
 
-  digitalWrite(RedPin, HIGH);
-  
-  buttonState = digitalRead(buttonPin); 
+    buttonState = digitalRead(buttonPin); 
 
-  if(buttonState == HIGH) {
-    win(); 
-    gamestate = false; 
+    if(i==10) { 
+      if(buttonState == HIGH) {
+        win(); 
+        //gamestate = false; 
+        digitalRead(resetPin);
+      }
+    }
+    
+    delay(gameLevel); 
+    digitalWrite(i, LOW);   
+    delay(gameLevel);
   }
-  
-  delay(50); 
-  digitalWrite(RedPin, LOW);
-  delay(50); 
-
-  digitalWrite(rYellowPin, HIGH);
-  delay(50); 
-  digitalWrite(rYellowPin, LOW);   
-  delay(50); 
-
-  digitalWrite(rBluePin, HIGH);
-  delay(50); 
-  digitalWrite(rBluePin, LOW);
-  delay(50); 
-  
-  digitalWrite(rWhitePin, HIGH);
-  delay(50); 
-  digitalWrite(rWhitePin, LOW);
-  delay(50); 
 }
 }
 
