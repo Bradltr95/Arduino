@@ -11,6 +11,9 @@ int rYellowPin = 11;
 int rBluePin = 12; 
 int rWhitePin = 13; 
 
+// flicker speed 
+int gamelevel = 25; 
+
 // initialize the button pin 
 int buttonPin = 2; 
 
